@@ -1,0 +1,32 @@
+class Combination {
+    private int n;
+    private int r;
+    private int[] now; // 현재 조합
+    private ArrayList<ArrayList<Pos>> result; // 모든 조합
+
+    public ArrayList<ArrayList<Pos>> getResult() {
+        return result;
+    }
+
+    public Combination(int n, int r) {
+        this.n = n;
+        this.r = r;
+        this.now = new int[r];
+        this.result = new ArrayList<ArrayList<Pos>>();
+    }
+
+    public void combination(ArrayList<Pos> arr, int depth, int index, int target) {
+        if (depth == r) {
+            ArrayList<Pos> temp = new ArrayList<>();
+            for (int i = 0; i < now.length; i++) {
+                temp.add(arr.get(now[i]));
+            }
+            result.add(temp);
+            return;
+        }
+        if (target == n) return;
+        now[index] = target;
+        combination(arr, depth + 1, index + 1, target + 1);
+        combination(arr, depth, index, target + 1);
+    }
+}
