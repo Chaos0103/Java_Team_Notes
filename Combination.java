@@ -2,22 +2,22 @@ class Combination {
     private int n;
     private int r;
     private int[] now; // 현재 조합
-    private ArrayList<ArrayList<Pos>> result; // 모든 조합
+    private ArrayList<ArrayList<Node>> result; // 모든 조합
 
-    public ArrayList<ArrayList<Pos>> getResult() {
+    public ArrayList<ArrayList<Node>> getResult() {
         return result;
     }
 
-    public Combination(int n, int r) {
+    public Combination(int n, int r) { //전체 갯수, 뽑을 갯수
         this.n = n;
         this.r = r;
         this.now = new int[r];
-        this.result = new ArrayList<ArrayList<Pos>>();
+        this.result = new ArrayList<ArrayList<Node>>();
     }
 
-    public void combination(ArrayList<Pos> arr, int depth, int index, int target) {
+    public void combination(ArrayList<Node> arr, int depth, int index, int target) {
         if (depth == r) {
-            ArrayList<Pos> temp = new ArrayList<>();
+            ArrayList<Node> temp = new ArrayList<>();
             for (int i = 0; i < now.length; i++) {
                 temp.add(arr.get(now[i]));
             }
