@@ -15,5 +15,5 @@
 * [이진 탐색(Binary Search)](/Searching/BinarySearch.java)
 
 ### 그래프(Graph)
-* [다익스트라 최단 경로(Dijkstra Shortest Path)](/graph/DijkstraShortestPath.java)
-* [플로이드 워셜 최단 경로(Floyd-Warcshall Shortest Path)](/graph/FloydWarcshallShortestPath.java)
+* [다익스트라 최단 경로(Dijkstra Shortest Path)](/Graph/DijkstraShortestPath.java)
+* [플로이드 워셜 최단 경로(Floyd-Warcshall Shortest Path)](/Graph/FloydWarcshallShortestPath.java)
