@@ -1,3 +1,4 @@
+//에라토스테네스의 체를 이용해야 되는 문제의 경우 N이 1,000,000 이내로 주어지는 경우가 많음
 import java.util.*;
 
 public class Main {
