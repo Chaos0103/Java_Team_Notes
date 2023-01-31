@@ -2,9 +2,9 @@ class Combination {
     private int n;
     private int r;
     private int[] now; // 현재 조합
-    private ArrayList<ArrayList<Node>> result; // 모든 조합
+    private ArrayList<ArrayList<Integer>> result; // 모든 조합
 
-    public ArrayList<ArrayList<Node>> getResult() {
+    public ArrayList<ArrayList<Integer>> getResult() {
         return result;
     }
 
@@ -12,12 +12,12 @@ class Combination {
         this.n = n;
         this.r = r;
         this.now = new int[r];
-        this.result = new ArrayList<ArrayList<Node>>();
+        this.result = new ArrayList<ArrayList<Integer>>();
     }
 
-    public void combination(ArrayList<Node> arr, int depth, int index, int target) {
+    public void combination(ArrayList<Integer> arr, int depth, int index, int target) {
         if (depth == r) {
-            ArrayList<Node> temp = new ArrayList<>();
+            ArrayList<Integer> temp = new ArrayList<>();
             for (int i = 0; i < now.length; i++) {
                 temp.add(arr.get(now[i]));
             }
