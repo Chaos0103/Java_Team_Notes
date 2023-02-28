@@ -20,6 +20,7 @@
 * [서로소 집합(Union-Find)](/Graph/UnionFind.java)
   * [서로소 집합 사이클 판별](/Graph/Cycle.java)
 * [크루스칼(최소 신장 트리)](/Graph/Kruskal.java)
+* [프림(최소 신장 트리)](/Graph/Prim.java)
 * [위상 정렬(Topology Sort)](/Graph/TopologySort.java)
 
 ### 기타 코드
