@@ -3,6 +3,14 @@
 
 ## Contents
 
+### 브루트포스(Bruteforce)
+* [순열(Permutation)](/Bruteforce/Permutation.java)
+* [중복 순열(Duplicate Permutation)](/Bruteforce/DuplicatePermutation.java)
+* [조합(Combination)](/Bruteforce/Combination.java)
+* [중복 조합(Duplicate Combination)](/Bruteforce/DuplicateCombination.java)
+* [부분 집합 재귀(SubSet Recursion)](/Bruteforce/SubSet_recursion.java)
+* [부분 집합 비트(SubSet Bit)](/Bruteforce/SubSet_bit.java)
+
 ### 정렬(Sorting)
 * [선택 정렬(Selection Sort)](/Sorting/SelectionSort.java)
 * [삽입 정렬(Insertion Sort)](/Sorting/InsertionSort.java)
