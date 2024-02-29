@@ -1,21 +1,5 @@
 import java.util.*;
 
-class Node implements Comparable<Node> {
-    public int index;
-    public int distance;
-
-    public Node(int index, int distance) {
-        this.index = index;
-        this.distance = distance;
-    }
-
-    //거리(비용)가 짧은 것이 높은 우선순위를 가지도록 설정
-    @Override
-    public int compareTo(Node o) {
-        return this.distance - o.distance;
-    }
-}
-
 public class Main {
 
     public static final int INF = (int) 1e9; //무한을 의미하는 값으로 10억을 설정
@@ -27,7 +11,23 @@ public class Main {
     //최단 거리 테이블 만들기
     public static int[] d = new int[100001];
 
-    public static void dijkstra(int start) {
+    private static class Node implements Comparable<Node> {
+        public int index;
+        public int distance;
+
+        public Node(int index, int distance) {
+            this.index = index;
+            this.distance = distance;
+        }
+
+        //거리(비용)가 짧은 것이 높은 우선순위를 가지도록 설정
+        @Override
+        public int compareTo(Node o) {
+            return this.distance - o.distance;
+        }
+    }
+
+    private static void dijkstra(int start) {
         PriorityQueue<Node> pq = new PriorityQueue<>();
         //시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
         pq.offer(new Node(start, 0));
