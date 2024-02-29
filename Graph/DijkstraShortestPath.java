@@ -1,30 +1,18 @@
 import java.util.*;
 
 class Node implements Comparable<Node> {
-
-    private int index;
-    private int distance;
+    public int index;
+    public int distance;
 
     public Node(int index, int distance) {
         this.index = index;
-        this.dist노드ane = distance;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public int getDistance() {
-        return distance;
+        this.distance = distance;
     }
 
     //거리(비용)가 짧은 것이 높은 우선순위를 가지도록 설정
     @Override
-    public int compareTo(Node other) {
-        if (this.distance < other.distance) {
-            return -1;
-        }
-        return 1;
+    public int compareTo(Node o) {
+        return this.distance - o.distance;
     }
 }
 
@@ -35,7 +23,7 @@ public class Main {
     //노드의 개수는 최대 100,000개라고 가정
     public static int n, m, start;
     //각 노드에 연결되어 있는 노드에 대한 정보를 담는 배열
-    public static ArrayList<ArrayList<Node>> graph = new ArrayList<ArrayList<Node>>();
+    public static ArrayList<ArrayList<Node>> graph = new ArrayList<>();
     //최단 거리 테이블 만들기
     public static int[] d = new int[100001];
 
@@ -47,19 +35,19 @@ public class Main {
         while (!pq.isEmpty()) { //큐가 비어있지 않다면
             //가장 최단 거리가 짧은 노드에 대한 정보 꺼내기
             Node node = pq.poll();
-            int dist = node.getDistance();
-            int now = node.getIndex();
+            int dist = node.distance;
+            int now = node.index;
             //현재 노드가 이미 처리된 적이 있는 노드라면 무시
             if (d[now] < dist) {
                 continue;
             }
             //현재 노드와 연결된 다른 인접한 노드를 확인
             for (int i = 0; i < graph.get(now).size(); i++) {
-                int cost = d[now] + graph.get(now).get(i).getDistance();
+                int cost = d[now] + graph.get(now).get(i).distance;
                 //현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧은 경우
-                if (cost < d[graph.get(now).get(i).getIndex()]) {
-                    d[graph.get(now).get(i).getIndex()] = cost;
-                    pq.offer(new Node(graph.get(now).get(i).getIndex(), cost));
+                if (cost < d[graph.get(now).get(i).index]) {
+                    d[graph.get(now).get(i).index] = cost;
+                    pq.offer(new Node(graph.get(now).get(i).index, cost));
                 }
             }
         }
